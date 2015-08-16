@@ -8,8 +8,6 @@
         <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body>
-        @section('sidebar')
-        @show
         @yield('content')
     <script src="{!! Html::cached_asset('js/material.js') !!}"></script>
     @yield('addJs')
