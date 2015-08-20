@@ -43,6 +43,19 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
+    //heroku db-config
+    $db = parse_url($_ENV["CLEARDB_DATABASE_URL"]);
+    if(!empty($db)){
+        $db_host = $db['host'];
+        $db_name = trim($db['path'], '/'));
+        $db_user = $db['user'];
+        $db_pass = $db['host'];
+    }else{
+        $db_host = 'localhost';
+        $db_name = 'baseapp';
+        $db_user = 'develop'; 
+        $db_pass = 'develop';
+    }
 
     'connections' => [
 
@@ -54,10 +67,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'baseapp'),
-            'username'  => env('DB_USERNAME', 'develop'),
-            'password'  => env('DB_PASSWORD', 'develop'),
+            'host'      => env('DB_HOST', $db_host),
+            'database'  => env('DB_DATABASE', $db_name),
+            'username'  => env('DB_USERNAME', $db_user),
+            'password'  => env('DB_PASSWORD', $db_pass),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
