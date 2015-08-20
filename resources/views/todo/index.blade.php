@@ -1,18 +1,18 @@
 @extends('layouts.master')
 @section('title', 'Page Title')
 
-@section('content')
+@section('addCss')
 <style>
       form { padding: 3px; position: fixed; bottom: 0; }
       #messages { list-style-type: none; margin: 5px; padding: 0; }
       #messages li { padding: 5px 10px; font-size: 18px; }
       #messages li:nth-child(odd) { background: #eee; }
-			i.material-icons {padding-top: 12px;}
-    </style>
+      i.material-icons {padding-top: 9px;}
+</style>
+@stop
 
-<!-- Accent-colored raised button with ripple -->
 
-
+@section('content')
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
