@@ -1,4 +1,16 @@
 <?php
+if(!empty($_ENV["CLEARDB_DATABASE_URL"])){
+    $db = parse_url($_ENV["CLEARDB_DATABASE_URL"]);
+    $db_host = $db['host'];
+    $db_name = trim($db['path'], '/');
+    $db_user = $db['user'];
+    $db_pass = $db['host'];
+}else{
+    $db_host = 'localhost';
+    $db_name = 'baseapp';
+    $db_user = 'develop'; 
+    $db_pass = 'develop';
+}
 
 return [
 
@@ -44,18 +56,6 @@ return [
     |
     */
     //heroku db-config
-    $db = parse_url($_ENV["CLEARDB_DATABASE_URL"]);
-    if(!empty($db)){
-        $db_host = $db['host'];
-        $db_name = trim($db['path'], '/'));
-        $db_user = $db['user'];
-        $db_pass = $db['host'];
-    }else{
-        $db_host = 'localhost';
-        $db_name = 'baseapp';
-        $db_user = 'develop'; 
-        $db_pass = 'develop';
-    }
 
     'connections' => [
 
