@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var elixir = require('laravel-elixir');
+var browserSync = require('browser-sync').create();
 //var coffee = require('gulp-coffee');
 
 require('laravel-elixir-stylus');
@@ -17,8 +18,20 @@ gulp.task('material', function() {
     .pipe(gulp.dest('public/css'));
 });
 
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    proxy: "192.168.33.19"
+  });
+});
+
+gulp.task('bs-reload', function () {
+      browserSync.reload();
+});
+
+
 // default タスクの時にcoffeeタスクを実行する
-gulp.task('default', ['material'], function() {
+gulp.task('default', ['material', 'browser-sync'], function() {
+  gulp.watch("./app/*/*.php",            ['bs-reload']);
   console.log("done");
 });
 
