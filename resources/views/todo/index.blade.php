@@ -44,7 +44,7 @@
     <label class="mdl-textfield__label" for="m">Text...</label>
   </div>
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
-    Send
+    Sendo
   </button>
 	</form>
 </div>

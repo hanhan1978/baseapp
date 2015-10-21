@@ -4,10 +4,18 @@ var browserSync = require('browser-sync').create();
 //var coffee = require('gulp-coffee');
 
 require('laravel-elixir-stylus');
+require('laravel-elixir-jade');
 
 
 elixir(function(mix) {
-   mix.stylus('app.styl');
+  mix.stylus('app.styl');
+  mix.jade({
+    search: '**/*.jade',
+    src: '/jade/'
+  });
+  mix.browserSync({
+    proxy: "192.168.33.19"
+  });
 });
 
 gulp.task('material', function() {
@@ -18,22 +26,6 @@ gulp.task('material', function() {
     .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('browser-sync', function() {
-  browserSync.init({
-    proxy: "192.168.33.19"
-  });
-});
-
-gulp.task('bs-reload', function () {
-      browserSync.reload();
-});
-
-
-// default タスクの時にcoffeeタスクを実行する
-gulp.task('default', ['material', 'browser-sync'], function() {
-  gulp.watch("./app/*/*.php",            ['bs-reload']);
-  console.log("done");
-});
 
 //gulp.task('coffee', function() {
 //  return gulp.src(['src/*.coffee']) // srcを指定

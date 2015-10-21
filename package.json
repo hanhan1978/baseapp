@@ -9,6 +9,7 @@
     "bootstrap-sass": "^3.0.0",
     "material-design-lite": "~1.0.2",
     "laravel-elixir-stylus": "~1.0.1",
-    "gulp-notify": "~2.2.0"
+    "gulp-notify": "~2.2.0",
+    "laravel-elixir-jade": "~0.1.9"
   }
 }

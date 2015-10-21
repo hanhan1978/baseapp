@@ -1,7 +1,7 @@
 <!-- Stored in resources/views/layouts/master.blade.php -->
 <html>
     <head>
-        <title>App Name - @yield('title')</title>
+        <title>BApp Name - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @yield('addCss')
         <link rel="stylesheet" type="text/css" href="{!! Html::cached_asset('css/material.css') !!}">
