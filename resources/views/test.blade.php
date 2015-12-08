@@ -1,0 +1,3 @@
+
+<aiueo></aiueo>
+<bakayarou></bakayarou>

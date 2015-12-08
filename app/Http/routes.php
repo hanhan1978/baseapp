@@ -10,6 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('auth/login', 'Auth\AuthController@getLogin');
 
 Route::get('/', 'TodoController@index');
