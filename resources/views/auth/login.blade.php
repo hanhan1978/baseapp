@@ -20,4 +20,5 @@
     <div>
         <button type="submit">Login</button>
     </div>
+    <a href='/auth/twitter'>Login with Twitter</a>
 </form>

@@ -26,12 +26,12 @@ Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset'); 
 
 
-
+// Twitter OAuth
 Route::get('auth/twitter', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallback');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/', 'TodoController@index');
+    Route::get('/', 'TodoController@index')->name('home');
 });
