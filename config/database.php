@@ -6,10 +6,10 @@ if(!empty($_ENV["CLEARDB_DATABASE_URL"])){
     $db_user = $db['user'];
     $db_pass = $db['host'];
 }else{
-    $db_host = 'localhost';
-    $db_name = 'baseapp';
-    $db_user = 'develop'; 
-    $db_pass = 'develop';
+    $db_host = env('DB_HOST');
+    $db_name = env('DB_DATABASE');
+    $db_user = env('DB_USERNAME');
+    $db_pass = env('DB_PASSWORD');
 }
 
 return [
